@@ -1,10 +1,14 @@
 import './App.css';
+import Header from './components/header';
+import PageContainer from './container/PageContainer';
 
 
 function App() {
   return (
     <div>
-      E Ticaret
+      <PageContainer>
+        <Header />
+      </PageContainer>
       
     </div>
   );
