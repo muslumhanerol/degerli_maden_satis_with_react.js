@@ -21,7 +21,7 @@ export const productSlice = createSlice({ //slice oluşturuldu.
 
     },
     extraReducers : (builder) => {
-        //istek atılıp bekleme modunda ise state.loading yi truw yap.
+        //istek atılıp bekleme modunda ise state.loading yi true yap.
         builder.addCase(getAllProducts.pending , (state)=>{ 
             state.loading = true;
         })
