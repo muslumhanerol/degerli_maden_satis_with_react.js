@@ -5,7 +5,7 @@ const initialState = {
     loading : false
 }
 
-export const productSlice = createSlice({ 
+export const productSlice = createSlice({ //slice oluşturuldu.
     name:"app",
     initialState,
     reducers:{
@@ -15,3 +15,7 @@ export const productSlice = createSlice({
 
     }
 })
+
+export const {  } = productSlice.actions //Dışarıya açtık.
+
+export default productSlice.reducer
