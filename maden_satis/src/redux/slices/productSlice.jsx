@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios';
 
 const initialState = {
-    product:[], //tüm ürünler
+    products:[], //tüm ürünler
     selectedProduct:{}, //ürün detay
     loading: false
 }
@@ -18,6 +18,9 @@ export const productSlice = createSlice({ //slice oluşturuldu.
     name:"product",
     initialState,
     reducers:{
+        setSelectedProduct : (state, action)=>{
+            state.selectedProduct = action.payload;
+        }
 
     },
     extraReducers : (builder) => {
@@ -33,6 +36,6 @@ export const productSlice = createSlice({ //slice oluşturuldu.
     }
 })
 
-export const {  } = productSlice.actions //Dışarıya açtık.
+export const { setSelectedProduct } = productSlice.actions //Dışarıya açtık.
 
 export default productSlice.reducer
