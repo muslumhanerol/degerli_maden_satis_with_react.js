@@ -6,9 +6,12 @@ function Product({product}) {
   return (
     <div className='card'>
         <img className='image' src={image} alt="" />
-        <div>
+        <div className='texttit'>
             <p>{title}</p>
-            <h3>{price}</h3>
+            <h3>{price} ₺</h3>
+        </div>
+        <div className='flex-row'>
+            <button className='btndetay'>Detaylar</button>
         </div>
     </div>
   )

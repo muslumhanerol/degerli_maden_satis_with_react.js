@@ -4,6 +4,31 @@
 }
 .card{
     width: 200px;
-    height: 380px;
+    height: 400px;
     box-shadow: 1px 4px 3px lightgrey;
+    border-radius: 10px;
+    margin: 15px;
+}
+.card:hover{
+    box-shadow: 1px 4px 3px rgb(139, 139, 139);
+    transition: all 0.6s;
+    cursor: pointer;
+}
+.texttit{
+    text-align: center;
+}
+.texttit p{
+    height: 50px;
+}
+.btndetay{
+    border: none;
+    padding: 10px;
+    border-radius: 5px;    
+    background-color:antiquewhite;
+    width: 100px;
+    font-family: 'roboto';
+}
+.btndetay:hover{
+    cursor: pointer;
+    background-color: rgb(225, 204, 173);
 }
