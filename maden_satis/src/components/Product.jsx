@@ -14,6 +14,7 @@ function Product({ product }) {
         <p>{title}</p>
         <h3>{price} ₺</h3>
       </div>
+      
       <div className='flex-row'>
         <button onClick={() => navigate("/product-details/" + id)} className='btndetay'>Detaylar</button>
       </div>

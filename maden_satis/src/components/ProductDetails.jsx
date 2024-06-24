@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom'
 import { setSelectedProduct } from '../redux/slices/productSlice';
+import '../css/Product.css';
+
 
 function ProductDetails() {
     const {id} = useParams();
@@ -24,7 +26,16 @@ function ProductDetails() {
         })
     }
   return (
-    <div>{title}</div>
+    <div className='detail_product' >
+        <div >
+        <img src={image} width={300} height={500}/>
+        </div>
+        <div>
+            <h2>{title}</h2>
+            <h3>{description}</h3>
+            <h1>{price}</h1>
+        </div>
+    </div>
   )
 }
 
