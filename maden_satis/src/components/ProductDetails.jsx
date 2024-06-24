@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom'
 import { setSelectedProduct } from '../redux/slices/productSlice';
@@ -14,8 +14,17 @@ function ProductDetails() {
 
     const {price , image, title , description} = selectedProduct;
 
+    const[count, setCount]=useState(0)
+
 
     const dispatch = useDispatch();
+
+    const increment = ()=>{
+        setCount(count + 1)
+    }
+    const decrement = ()=>{
+        setCount(count - 1)
+    }
 
     useEffect(()=>{
         getProductById();
@@ -39,7 +48,7 @@ function ProductDetails() {
             <h1 className='price'>{price} ₺</h1>
             
             <div id='icons'>
-                <FaPlus style={{marginRight:'15px'}}/> <span>0</span> <FaMinus style={{marginLeft:'15px'}}/>                
+                <FaMinus onClick={decrement} style={{marginRight:'25px'}}/> <span>{count}</span> <FaPlus onClick={increment} style={{marginLeft:'25px'}}/>                
             </div>
 
             <div className='basket'>
