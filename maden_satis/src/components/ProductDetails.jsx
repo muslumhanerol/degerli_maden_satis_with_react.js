@@ -3,6 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom'
 import { setSelectedProduct } from '../redux/slices/productSlice';
 import '../css/Product.css';
+import { FaPlus } from "react-icons/fa6";
+import { FaMinus } from "react-icons/fa6";
+
 
 
 function ProductDetails() {
@@ -33,7 +36,16 @@ function ProductDetails() {
         <div>
             <h1>{title}</h1>
             <h3>{description}</h3>
-            <h1>{price}</h1>
+            <h1 className='price'>{price} ₺</h1>
+            
+            <div id='icons'>
+                <FaPlus style={{marginRight:'15px'}}/> <span>0</span> <FaMinus style={{marginLeft:'15px'}}/>                
+            </div>
+
+            <div className='basket'>
+                <button>Sepete Ekle</button>
+            </div>
+
         </div>
     </div>
   )

@@ -50,3 +50,29 @@
     font-size: 20px;
     font-family: 'roboto';
 }
+.detail_product .price{
+    font-size: 50px;
+    font-weight: bold;
+    color: cadetblue;
+}
+.detail_product #icons{
+    font-size: 30px;
+}
+.detail_product #icons span{
+    font-size: 35px;
+}
+.detail_product #icons{
+    display: flex;
+    align-items: center;
+}
+.basket button{
+    margin-top: 25px;
+    border: none;
+    padding: 20px;
+    background-color:dimgray;
+    border-radius: 5px;
+    color: #fff;
+}
+.basket button:hover{
+    background-color:cadetblue;
+}
