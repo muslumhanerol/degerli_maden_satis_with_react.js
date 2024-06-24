@@ -31,7 +31,7 @@ function ProductDetails() {
         <img src={image} width={300} height={500}/>
         </div>
         <div>
-            <h2>{title}</h2>
+            <h1>{title}</h1>
             <h3>{description}</h3>
             <h1>{price}</h1>
         </div>

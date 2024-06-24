@@ -43,3 +43,10 @@
 .detail_product img{
     margin-right: 40px;
 }
+.detail_product h1{
+    font-family: 'roboto';
+}
+.detail_product h3{
+    font-size: 20px;
+    font-family: 'roboto';
+}
