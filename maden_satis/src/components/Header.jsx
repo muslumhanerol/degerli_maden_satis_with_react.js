@@ -5,12 +5,14 @@ import { CiLight } from "react-icons/ci";
 import { FaRegMoon } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 import Badge from '@mui/material/Badge';
+import { useSelector } from 'react-redux';
 
 
 
 function Header() {
     const [mode , setmode] = useState(false);
     const navigate = useNavigate();
+    const {products} = useSelector((store)=> store.basket); //sepetteki ürünler çekildi.
     const changeMode = () => {
         const root = document.getElementById("root");
         setmode(!mode);
@@ -37,11 +39,11 @@ function Header() {
             <div className='icon'>
             {mode ? <FaRegMoon onClick={changeMode} /> : <CiLight onClick={changeMode} />}
             
-            <Badge badgeContent={4} color="primary">
+            <Badge badgeContent={products.length} color="primary">
                 <SlBasket />
             </Badge>
             
-            </div>  
+            </div>           
         </div>
     </div>
   )

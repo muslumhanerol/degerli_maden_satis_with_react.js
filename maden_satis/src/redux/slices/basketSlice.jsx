@@ -9,7 +9,6 @@ const getBasketFromStorage = () =>{
 
 const initialState = {
     products : getBasketFromStorage(),
-
 }
 
 const writeFromBasketToStorage = (basket) =>{
@@ -23,11 +22,15 @@ export const basketSlice = createSlice({
     initialState,
     reducers:{
         addToBasket : (state, action) => {
-         const findProduct = products && products.find((product) => product.id === action.payload.id);
-         if(findProduct){
+         const findProduct = state.products && state.products.find((product) => product.id === action.payload.id);
+         if(findProduct){ //ürün daha önce eklenmişse
+           const extractedProducts = state.products.filter((product)=> product.id !== action.payload.id);
+           findProduct.count += action.payload.count; //silinmiş ve dışarıdan yeni eklenen
+           state.products = [...extractedProducts, findProduct];
+           writeFromBasketToStorage(state.products);
 
          }else{
-            state.products = [...state.products, action.payload]; //mevcut ürün ve aynı id ye sahip başka ürün eklenirse bunun üzerine ekle.
+            state.products = [...state.products, action.payload]; //yeni ürün eklenmişse
             writeFromBasketToStorage(state.products);
          }
             

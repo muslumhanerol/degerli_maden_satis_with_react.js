@@ -26,7 +26,7 @@ function ProductDetails() {
         setCount(count - 1)
     }
 
-    const addBasket = ()=>{
+    const addBasket = () => {
         const payload = {
             id,
             price,
@@ -35,10 +35,10 @@ function ProductDetails() {
             description,
             count
         }
-        dispatch(addBasket(payload));
+        dispatch(addToBasket(payload));
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         getProductById();
     }, [])
 
