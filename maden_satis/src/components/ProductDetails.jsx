@@ -26,6 +26,18 @@ function ProductDetails() {
         setCount(count - 1)
     }
 
+    const addBasket = ()=>{
+        const payload = {
+            id,
+            price,
+            image,
+            title,
+            description,
+            count
+        }
+        dispatch(addBasket(payload));
+    }
+
     useEffect(()=>{
         getProductById();
     }, [])
@@ -52,7 +64,7 @@ function ProductDetails() {
             </div>
 
             <div className='basket'>
-                <button>Sepete Ekle</button>
+                <button onClick={addBasket}>Sepete Ekle</button>
             </div>
 
         </div>

@@ -12,8 +12,8 @@ const initialState = {
 
 }
 
-const writeFromBasketToStorage = () =>{
-    localStorage.setItem("basket", JSON.stringify())
+const writeFromBasketToStorage = (basket) =>{
+    localStorage.setItem("basket", JSON.stringify(basket))
 }
 
 
@@ -22,12 +22,19 @@ export const basketSlice = createSlice({
     name : "basket",
     initialState,
     reducers:{
-        addToBasket : (state, action)=>{
+        addToBasket : (state, action) => {
+         const findProduct = products && products.find((product) => product.id === action.payload.id);
+         if(findProduct){
 
+         }else{
+            state.products = [...state.products, action.payload]; //mevcut ürün ve aynı id ye sahip başka ürün eklenirse bunun üzerine ekle.
+            writeFromBasketToStorage(state.products);
+         }
+            
         }
     }
 })
 
 
-export const {  } = basketSlice.actions 
+export const { addToBasket } = basketSlice.actions 
 export default basketSlice.reducer
