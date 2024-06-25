@@ -4,6 +4,8 @@ import { SlBasket } from "react-icons/sl";
 import { CiLight } from "react-icons/ci";
 import { FaRegMoon } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
+import Badge from '@mui/material/Badge';
+
 
 
 function Header() {
@@ -34,7 +36,11 @@ function Header() {
             <input className='search-input' type='text' placeholder='Ürünleri Ara'/>
             <div className='icon'>
             {mode ? <FaRegMoon onClick={changeMode} /> : <CiLight onClick={changeMode} />}
-            <SlBasket />
+            
+            <Badge badgeContent={4} color="primary">
+                <SlBasket />
+            </Badge>
+            
             </div>  
         </div>
     </div>
