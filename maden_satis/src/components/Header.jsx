@@ -35,7 +35,7 @@ function Header() {
     <div style={{display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'space-between'}}>
         <div className='flex-row' onClick={()=>navigate("/")}>
             <img className="logo" src="./src/images/logo_bb.png"/>
-            <p className="logo-text">DEGERLİ MADEN SATIŞ</p>
+            <p className="logo-text">EŞYA SATIŞ</p>
         </div>
         
         <div className='flex-row'>
