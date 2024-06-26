@@ -5,7 +5,7 @@ import { setSelectedProduct } from '../redux/slices/productSlice';
 import '../css/Product.css';
 import { FaPlus } from "react-icons/fa6";
 import { FaMinus } from "react-icons/fa6";
-import { addToBasket } from '../redux/slices/basketSlice';
+import { addToBasket, calculateBasket } from '../redux/slices/basketSlice';
 
 
 
@@ -37,6 +37,7 @@ function ProductDetails() {
             count
         }
         dispatch(addToBasket(payload));
+        dispatch(calculateBasket());
     }
 
     useEffect(() => {
