@@ -5,6 +5,7 @@ import { setSelectedProduct } from '../redux/slices/productSlice';
 import '../css/Product.css';
 import { FaPlus } from "react-icons/fa6";
 import { FaMinus } from "react-icons/fa6";
+import { addToBasket } from '../redux/slices/basketSlice';
 
 
 
@@ -44,7 +45,7 @@ function ProductDetails() {
 
     const getProductById = () => {
         products && products.map((product)=>{
-            if(product.id ==id){
+            if(product.id == id){
                 dispatch(setSelectedProduct(product));
             }
         })
